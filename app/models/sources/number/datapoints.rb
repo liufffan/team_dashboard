@@ -32,6 +32,10 @@ module Sources
         values.empty? ? 0 : sum(values) / values.size
       end
 
+      def max(values)
+        values.empty? ? 0 : values.max
+      end
+
       def sum(values)
         values.inject(0, &:+)
       end
@@ -42,6 +46,8 @@ module Sources
           average(values)
         when "sum"
           sum(values)
+        when "max"
+          max(values)
         else
           raise "Unsupported aggregate function: #{aggregate_function}"
         end

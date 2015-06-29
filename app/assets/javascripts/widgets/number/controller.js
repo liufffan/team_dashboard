@@ -21,6 +21,7 @@ app.controller("NumberCtrl", ["$scope", "Sources", "EditorFormOptions", "$dialog
   $scope.aggregate_functions  = EditorFormOptions.aggregate_functions;
 
   $scope.aggregateFunction = [
+    { value: "max",        label: "Max" },
     { value: "average",    label: "Average" },
     { value: "sum",        label: "Sum" },
     { value: "difference", label: "Difference" }

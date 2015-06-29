@@ -9,6 +9,9 @@ module Aggregation
 
   def aggregate(dps, aggregate_function)
     case aggregate_function.to_sym
+    when :max
+        sum = dps.inject(0) { |result, dp| result += dp.first if dp.first; result }
+        sum / dps.size
     when :average
       sum = dps.inject(0) { |result, dp| result += dp.first if dp.first; result }
       sum / dps.size
