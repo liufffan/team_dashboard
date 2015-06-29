@@ -13,6 +13,7 @@ app.directive("meter", ["NumberModel", function(NumberModel) {
     }
 
     function update() {
+        console.log(scope.widget);
       return NumberModel.getData(scope.widget).success(onSuccess);
     }
 

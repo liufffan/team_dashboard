@@ -17,6 +17,7 @@ app.controller("MeterCtrl", ["$scope", "Sources", "EditorFormOptions", function(
   $scope.aggregate_functions  = EditorFormOptions.aggregate_functions;
 
   $scope.aggregateFunction = [
+    { value: "max",        label: "Max" },
     { value: "average",    label: "Average" },
     { value: "sum",        label: "Sum" },
     { value: "difference", label: "Difference" }
