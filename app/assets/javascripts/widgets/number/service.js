@@ -7,7 +7,15 @@ app.factory("NumberModel", ["$http", "TimeSelector", function($http, TimeSelecto
     };
 
     if (config.range) {
-      _.extend(result, { from: TimeSelector.getFrom(config.range), to: TimeSelector.getCurrent(config.range)})
+        var to = TimeSelector.getCurrent(config.range)
+
+        if (config.range === 'yesterday') {
+            to = new Date();
+            to.setDate(to.getDate() -1 );
+            to = to.getTime() / 1000;
+        }
+
+      _.extend(result, { from: TimeSelector.getFrom(config.range), to: to})
     }
 
     return result;
