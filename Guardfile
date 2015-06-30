@@ -1,5 +1,7 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
+guard 'webrick' do
+end
 
 guard 'jasmine' do
   watch(%r{spec/javascripts/spec\.(js\.coffee|js|coffee)$})         { "spec/javascripts" }

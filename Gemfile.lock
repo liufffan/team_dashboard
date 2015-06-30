@@ -29,6 +29,7 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    addressable (2.3.8)
     arel (4.0.1)
     atomic (1.1.14)
     better_errors (1.0.1)
@@ -63,19 +64,40 @@ GEM
       multipart-post (~> 1.2.0)
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
+    ffi (1.9.9)
     foreman (0.63.0)
       dotenv (>= 0.7)
       thor (>= 0.13.6)
+    formatador (0.2.5)
+    guard (1.8.3)
+      formatador (>= 0.2.4)
+      listen (~> 1.3)
+      lumberjack (>= 1.0.2)
+      pry (>= 0.9.10)
+      thor (>= 0.14.6)
+    guard-webrick (0.1.4)
+      ffi
+      guard (~> 1.0)
+      launchy (~> 2.1.0)
+      spoon (~> 0.0.1)
     hike (1.2.3)
     i18n (0.6.5)
     json (1.8.1)
     kgio (2.8.0)
+    launchy (2.1.2)
+      addressable (~> 2.3)
     libv8 (3.16.14.3)
     libxml-ruby (2.7.0)
+    listen (1.3.1)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+      rb-kqueue (>= 0.2)
+    lumberjack (1.0.9)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     metaclass (0.0.1)
+    method_source (0.8.2)
     mime-types (1.25)
     minitest (4.7.5)
     mocha (0.14.0)
@@ -87,6 +109,10 @@ GEM
     newrelic_api (1.2.4)
     nokogiri (1.5.5)
     polyglot (0.3.3)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -112,6 +138,11 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.10.0)
     rake (10.1.0)
+    rb-fsevent (0.9.5)
+    rb-inotify (0.9.5)
+      ffi (>= 0.5.0)
+    rb-kqueue (0.2.4)
+      ffi (>= 0.5.0)
     ref (1.0.5)
     rspec-core (2.14.6)
     rspec-expectations (2.14.3)
@@ -129,6 +160,9 @@ GEM
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
+    slop (3.6.0)
+    spoon (0.0.4)
+      ffi
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -171,6 +205,7 @@ DEPENDENCIES
   faraday
   faraday_middleware
   foreman
+  guard-webrick
   libxml-ruby
   mocha
   multi_xml
@@ -184,3 +219,6 @@ DEPENDENCIES
   therubyracer
   uglifier
   unicorn
+
+BUNDLED WITH
+   1.10.5
