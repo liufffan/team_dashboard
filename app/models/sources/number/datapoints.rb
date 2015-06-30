@@ -15,8 +15,8 @@ module Sources
           current_value = calculate_result(values)
           end_date  = (DateTime.now - 1.day).to_time.to_i
           start_date = DateTime.yesterday.to_time.to_i
-          puts (end_date)
-          puts(start_date)
+          options[:from] = start_date
+          options[:to] = end_date
           request_result = request_data(options.merge(:source => @datapoints_source))
           values = aggregate(request_result)
           { value: current_value, prev_value: values.max }
