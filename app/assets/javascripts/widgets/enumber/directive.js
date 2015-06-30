@@ -21,12 +21,14 @@ app.directive("enumber", ["ENumberModel", "SuffixFormatter", function (ENumberMo
 
             scope.data.secondaryValue = calculatePercentage(scope.data.value, scope.data.prev_value);
             if (scope.widget.reversed_metric ){
-                scope.data.arrow = scope.data.secondaryValue > 0 ? "green-arrow-down" : "red-arrow-up";
+                scope.data.arrow = scope.data.secondaryValue < 0 ? "green-arrow-down" : "red-arrow-up";
+                scope.data.color = scope.data.secondaryValue < 0 ? "color-up" : "color-down";
 
             } else {
                 scope.data.arrow = scope.data.secondaryValue > 0 ? "green-arrow-up" : "red-arrow-down";
+                scope.data.color = scope.data.secondaryValue > 0 ? "color-up" : "color-down";
             }
-            scope.data.color = scope.data.secondaryValue > 0 ? "color-up" : "color-down";
+
 
         }
 
