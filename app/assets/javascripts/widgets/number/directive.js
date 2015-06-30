@@ -18,7 +18,7 @@ app.directive("number", ["NumberModel", "SuffixFormatter", function(NumberModel,
       scope.data.stringValue = scope.widget.use_metric_suffix ? SuffixFormatter.format(scope.data.value, 1) : scope.data.value.toString();
 
       var previousData = scope.previousData;
-      if (previousData) {
+      if (previousData && !scope.widget.disable_index) {
         scope.data.secondaryValue = calculatePercentage(scope.data.value, previousData.value);
         scope.data.arrow = scope.data.secondaryValue > 0 ? "arrow-up" : "arrow-down";
         scope.data.color = scope.data.secondaryValue > 0 ? "color-up" : "color-down";
