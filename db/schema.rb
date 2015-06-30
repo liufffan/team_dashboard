@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130720154824) do
+ActiveRecord::Schema.define(version: 20150630051956) do
 
   create_table "dashboards", force: true do |t|
     t.string   "name"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20130720154824) do
     t.integer  "row"
     t.integer  "size_x"
     t.integer  "size_y"
+    t.boolean  "request_yesterday"
   end
 
 end

@@ -36,6 +36,7 @@ module Api
       # fixed on rails master (remove after 4.0.1 release)
       request.body.rewind
       input = JSON.parse(request.body.read)
+      puts (input)
       if widget.update_attributes(Widget.slice_attributes(input))
         head :no_content
       else
