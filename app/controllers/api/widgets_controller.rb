@@ -18,10 +18,6 @@ module Api
       request.body.rewind
       input = JSON.parse(request.body.read)
 
-      if input["kind"] == 'extended-number'
-        input["kind"] = 'number'
-      end
-
       widget = dashboard.widgets.build(Widget.slice_attributes(input))
       if widget.save
         render :json => widget, :status => :created, :location => api_dashboard_widget_url(:dashboard_id => dashboard.id, :id => widget.id)

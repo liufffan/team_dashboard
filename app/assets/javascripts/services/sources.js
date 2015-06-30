@@ -4,7 +4,7 @@ app.factory("Sources", ["System", function(System) {
   function kindMapping(kind) {
     if (kind === "graph") kind = "datapoints";
     if (kind === "meter") kind = "number";
-    if (kind === "extended-number") kind = "number";
+    if (kind === "enumber") kind = "number";
     return kind;
   }
 

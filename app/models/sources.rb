@@ -1,7 +1,8 @@
 module Sources
   extend self
 
-  class UnknownPluginError < StandardError; end
+  class UnknownPluginError < StandardError;
+  end
 
   def available_source_types
     @available_source_types ||= begin
@@ -18,10 +19,14 @@ module Sources
 
   def widget_type_to_source_type(type)
     case type
-    when "graph" then "datapoints"
-    when "meter" then "number"
-    else
-      type
+      when "graph" then
+        "datapoints"
+      when "meter" then
+        "number"
+      when "enumber" then
+        "number"
+      else
+        type
     end
   end
 
@@ -58,12 +63,12 @@ module Sources
   def source_properties(type, name)
     plugin = plugin_clazz(type, name).new
     {
-      name:                     name,
-      available:                plugin.available?,
-      supports_target_browsing: plugin.supports_target_browsing?,
-      supports_functions:       plugin.supports_functions?,
-      custom_fields:            plugin.custom_fields,
-      default_fields:           plugin.default_fields
+        name: name,
+        available: plugin.available?,
+        supports_target_browsing: plugin.supports_target_browsing?,
+        supports_functions: plugin.supports_functions?,
+        custom_fields: plugin.custom_fields,
+        default_fields: plugin.default_fields
     }
   end
 

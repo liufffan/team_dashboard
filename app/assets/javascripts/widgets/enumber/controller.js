@@ -1,4 +1,4 @@
-app.controller("ExtendedNumberCtrl", ["$scope", "Sources", "EditorFormOptions", "$dialog", function($scope, Sources, EditorFormOptions, $dialog) {
+app.controller("ENumberCtrl", ["$scope", "Sources", "EditorFormOptions", "$dialog", function($scope, Sources, EditorFormOptions, $dialog) {
 
   var dialog = $dialog.dialog();
 

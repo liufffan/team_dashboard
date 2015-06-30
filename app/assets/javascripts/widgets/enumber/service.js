@@ -1,4 +1,4 @@
-app.factory("ExtendedNumberModel", ["$http", "TimeSelector", function($http, TimeSelector) {
+app.factory("ENumberModel", ["$http", "TimeSelector", function($http, TimeSelector) {
 
   function getParams(config) {
     var result = {
