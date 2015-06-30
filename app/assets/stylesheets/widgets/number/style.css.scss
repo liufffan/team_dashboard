@@ -12,12 +12,12 @@
     text-shadow: 1px 1px 1px #330, -1px -1px 1px #330;
   }
 
-  .arrow-up, .arrow-down {
+  .green-arrow-up, .green-arrow-down, .red-arrow-down, .red-arrow-up{
     display: inline-block;
     margin-bottom: 5px;
   }
 
-  .arrow-up {
+  .green-arrow-up {
     width: 0;
     height: 0;
     border-left: 10px solid transparent;
@@ -25,11 +25,26 @@
     border-bottom: 10px solid #8ec15c;
   }
 
-  .arrow-down {
+  .red-arrow-down {
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid #D26771;
+  }
+
+  .red-arrow-up {
+
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #D26771;
+  }
+
+  .green-arrow-down {
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #8ec15c;
   }
 
 }
