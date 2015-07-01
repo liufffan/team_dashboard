@@ -45,7 +45,6 @@ app.controller("WidgetCtrl", ["$scope", "$timeout", "$rootScope", function($scop
 
   $scope.init = function(updateFn) {
     updateFunction = updateFn;
-      console.log("Init");
     startTimer();
   };
 

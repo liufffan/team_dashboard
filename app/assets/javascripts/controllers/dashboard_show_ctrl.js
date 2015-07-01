@@ -9,7 +9,6 @@ app.controller("DashboardShowCtrl", ["$scope", "$rootScope", "$routeParams", "$l
         function handleResults(results) {
             $scope.dashboard = results[0];
             $scope.widgets = results[1];
-            console.log(results[1]);
             $rootScope.resolved = true;
         }
 
@@ -40,12 +39,10 @@ app.controller("DashboardShowCtrl", ["$scope", "$rootScope", "$routeParams", "$l
 
         function replaceWidget(id, widget) {
             var w = _.findWhere($scope.widgets, {id: widget.id});
-            console.log(w);
             _.extend(w, widget);
         }
 
         $scope.addWidget = function (kind) {
-            console.log("Addwidget");
             var widget = new Widget({kind: kind, dashboard_id: $scope.dashboard.id, row: null, col: null});
             var dialogOptions = {
                 templateUrl: 'templates/widget/edit.html', controller: "WidgetEditCtrl",
