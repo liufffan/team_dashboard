@@ -13,8 +13,8 @@ module Sources
         values = aggregate(request_result)
         if @widget.request_yesterday
           current_value = calculate_result(values)
-          end_date  = (DateTime.now - 1.day).to_time.to_i
-          start_date = DateTime.yesterday.to_time.to_i
+          end_date  = (DateTime.now - 7.days).to_time.to_i
+          start_date = (DateTime.yesterday - 6.days).to_time.to_i
           options[:from] = start_date
           options[:to] = end_date
           request_result = request_data(options.merge(:source => @datapoints_source))
