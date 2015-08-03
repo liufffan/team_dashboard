@@ -25,7 +25,7 @@ app.factory("NumberModel", ["$http", "TimeSelector", function($http, TimeSelecto
             from = from/1000;
             to = to.getTime() / 1000;
         }
-        from = (from !== 'undefined') ? from : TimeSelector.getFrom(config.range);
+        from = (typeof(from) !== 'undefined') ? from : TimeSelector.getFrom(config.range);
 
       _.extend(result, { from: from , to: to})
     }
