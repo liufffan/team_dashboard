@@ -1,6 +1,0 @@
-{
-  "devDependencies": {
-    "karma": "~0.10",
-    "karma-ng-html2js-preprocessor": "~0.1"
-  }
-}
